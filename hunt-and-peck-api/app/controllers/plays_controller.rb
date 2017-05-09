@@ -1,4 +1,5 @@
 class PlaysController < ApplicationController
+# class API::v1::PlaysController < ApplicationController
   def index
     @plays = Play.all
     render json: @plays
