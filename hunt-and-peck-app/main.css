@@ -2,6 +2,7 @@
   padding: 5px 10px;
   border: solid 2px;
   border-radius: 8px;
+  font-family: 'Hind Vadodara', sans-serif;
 }
 .correct {
   background-color: #c8e6c9;
@@ -11,3 +12,9 @@
   background-color: #ef9a9a;
   border-color: #c62828;
 }
+#test {
+  font-family: 'Varela', sans-serif;
+  font-size: 20px;
+}
+/*font-family: 'Julius Sans One', sans-serif;*/
+/*font-family: 'Raleway', sans-serif;*/
