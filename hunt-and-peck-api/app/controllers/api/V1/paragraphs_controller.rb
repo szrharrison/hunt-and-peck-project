@@ -1,5 +1,5 @@
-class ParagraphsController < ApplicationController
-# class API::v1::ParagraphsController < ApplicationController
+# class ParagraphsController < ApplicationController
+class Api::V1::ParagraphsController < ApplicationController
   def index
     @paragraphs = Paragraph.all
     render json: @paragraphs
