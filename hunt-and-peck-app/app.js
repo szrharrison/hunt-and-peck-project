@@ -111,6 +111,16 @@ jQuery.fn.removeHighlight = function() {
  }).end()
 }
 
+function accuracy(matchArray){
+	const totalCorrect = matchArray.reduce((total, match) => total + match, 0)
+	return totalCorrect / matchArray.length
+}
+
+function wpm(matchArray){
+	const totalCorrect = matchArray.reduce((total, match) => total + match, 0)
+	return totalCorrect
+}
+
 // function highlight($node, pattern) {
 //   let node = $node[0]
 //   console.log(node.nodeType)
