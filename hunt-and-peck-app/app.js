@@ -1,3 +1,5 @@
+let matchArray = []
+
 $(function() {
   getParagraph()
 
@@ -16,7 +18,6 @@ $(function() {
 function trackKeys() {
   const text = $('#test').text().split(" ")
   let counter = 0
-  let matchArray = []
   $('#input').on('keydown.trackKeys', function(e) {
     if(e.keyCode === 32) {
       e.preventDefault()
@@ -28,10 +29,7 @@ function trackKeys() {
         highlight($('#test'), text[counter], 0)
         matchArray.push(0)
       }
-      console.log(`${userInput} === ${text[counter]}`, userInput === text[counter])
       counter ++
-      // console.log(userInput)
-      // textMatch(userInput)
       $(this).val('')
     }
   })
@@ -61,14 +59,18 @@ function getParagraph() {
 }
 
 function setTimer() {
-  var count = 60
-  $('#counter').html(count)
+  var countUp = 0
+  var countDown = 60
+  $('#counter').html(countDown)
   var timer = setInterval(function() {
-    $("#counter").html(count -= 1)
-
-    if(count === 0) {
+    $("#counter").html(countDown -= 1)
+    countUp += 1
+    const acc = accuracy()
+    const wpm = wordsPerMinute(countUp)
+    console.log(wpm)
+    if(countDown === 0) {
       clearInterval(timer)
-      alert(`You're out of time`)
+      alert(`You're out of time. Accuracy: ${acc*100}%. WPM: ${wpm}`)
     }
   }, 1000)
 }
@@ -96,7 +98,6 @@ jQuery.fn.highlight = function(pat) {
   }
   return skip
  }
- console.log( this )
  return this.length && pat && pat.length ? this.each(function() {
   innerHighlight(this, pat.toUpperCase())
  }) : this
@@ -138,7 +139,6 @@ function highlight($nodes, pattern, acc) {
         i += innerHighlight($node.childNodes[i], pattern, acc)
       }
     }
-    console.log( !$node.className )
     return skip
   }
 
@@ -151,14 +151,14 @@ function highlight($nodes, pattern, acc) {
   }
 }
 
-function accuracy(matchArray){
+function accuracy(){
 	const totalCorrect = matchArray.reduce((total, match) => total + match, 0)
-	return totalCorrect / matchArray.length
+	return Math.round(totalCorrect / matchArray.length)
 }
 
-function wpm(matchArray){
-	const totalCorrect = matchArray.reduce((total, match) => total + match, 0)
-	return totalCorrect
+function wordsPerMinute(timeElapsed){
+	const total = matchArray.length
+	return total * accuracy(matchArray) / (timeElapsed / 60)
 }
 
 function removeHighlight(node) {
