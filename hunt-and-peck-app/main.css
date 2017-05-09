@@ -1,7 +1,13 @@
 .highlight {
-  background-color: #c8e6c9;
   padding: 5px 10px;
   border: solid 2px;
-  border-color: #8bc34a;
   border-radius: 8px;
+}
+.correct {
+  background-color: #c8e6c9;
+  border-color: #8bc34a;
+}
+.wrong {
+  background-color: #ef9a9a;
+  border-color: #c62828;
 }
