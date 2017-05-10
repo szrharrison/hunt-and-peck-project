@@ -55,6 +55,7 @@ class ParagraphView {
       console.log(wpm)
       if(countDown === 0) {
         clearInterval(timer)
+        $('#input').prop('disabled', true)
         alert(`You're out of time. Accuracy: ${acc}%. WPM: ${wpm}`)
         UserView.new()
         UsersController.create(wpm, acc, paraID)
