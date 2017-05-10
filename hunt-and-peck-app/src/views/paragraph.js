@@ -16,7 +16,7 @@ class ParagraphView {
         var pos = $node.data.indexOf(pattern)
         if (pos >= 0) {
           var spannode = document.createElement('span')
-          spannode.className = `highlight ${className}`
+          spannode.className = `${className}`
           var middlebit = $node.splitText(pos)
           var endbit = middlebit.splitText(pattern.length)
           var middleclone = middlebit.cloneNode(true)
@@ -44,7 +44,7 @@ class ParagraphView {
 
   timer(matchesConcern) {
     var countUp = 0
-    var countDown = 5
+    var countDown = 120
     var paraID = this.paraID
     $('#counter').html(countDown)
     var timer = setInterval(function() {
@@ -62,4 +62,40 @@ class ParagraphView {
       }
     }, 1000)
   }
+
+  letterHighlight($nodes, pattern, className) {
+    function innerHighlight($node, pattern, className) {
+      var skip = 0
+      if ($node.nodeType == 3) {
+        var pos = $node.data.indexOf(pattern)
+        if (pos >= 0) {
+          var knode = document.createElement('k')
+          knode.className = `${className}`
+          var middlebit = $node.splitText(pos)
+          var endbit = middlebit.splitText(pattern.length)
+          var middleclone = middlebit.cloneNode(true)
+          knode.appendChild(middleclone)
+          middlebit.parentNode.replaceChild(knode, middlebit)
+          skip = 1
+          return
+        }
+      } else if ($node.nodeType == 1 && !$node.className && $node.childNodes && !/(script|style)/i.test($node.tagName)) {
+        for (var i = 0; i < $node.childNodes.length; ++i) {
+          i += innerHighlight($node.childNodes[i], pattern, className)
+        }
+      }
+      return skip
+    }
+
+    if ($nodes.length && pattern && pattern.length) {
+      return $nodes.each(function() {
+        innerHighlight(this, pattern, className)
+      })
+    } else {
+      return $nodes
+    }
+  }
+
+
+
 }

@@ -1,4 +1,9 @@
-.highlight {
+/*.highlight {
+  padding: 0 10px;
+  border: solid 2px;
+  border-radius: 8px;
+}*/
+.current{
   padding: 0 10px;
   border: solid 2px;
   border-radius: 8px;
@@ -6,10 +11,24 @@
 .correct {
   background-color: #c8e6c9;
   border-color: #8bc34a;
+  padding: 0 10px;
+  border: solid 2px;
+  border-radius: 8px;
 }
 .wrong {
   background-color: #ef9a9a;
   border-color: #c62828;
+  padding: 0 10px;
+  border: solid 2px;
+  border-radius: 8px;
+}
+
+.colorCorrect {
+  color: green;
+}
+
+.colorWrong {
+  color: red;
 }
 #paragraph {
   font-family: 'Varela', sans-serif;
