@@ -11,5 +11,13 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
+    binding.pry
   end
+
+  private 
+
+  def user_params
+
+  end
+  
 end

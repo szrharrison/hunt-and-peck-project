@@ -13,4 +13,9 @@ class Api::V1::ParagraphsController < ApplicationController
   def create
     
   end
+
+  def rand
+    @paragraph = Paragraph.all.sample
+    render json: @paragraph
+  end
 end
