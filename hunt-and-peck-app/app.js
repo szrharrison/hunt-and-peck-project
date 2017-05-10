@@ -56,7 +56,7 @@ function textMatch(userInput){
 
 function getParagraph() {
   return $.ajax({
-    url: "http://localhost:3000/paragraphs/1",
+    url: "http://localhost:3000/api/v1/paragraphs/1",
   })
 }
 
@@ -71,6 +71,8 @@ function setTimer() {
     const wpm = wordsPerMinute(countUp)
     console.log(wpm)
     if(countDown === 0) {
+      //populateUser function gets evoked
+      populateUser()
       clearInterval(timer)
       alert(`You're out of time. Accuracy: ${acc}%. WPM: ${wpm}`)
     }
