@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistics</title>
+	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:500|Julius+Sans+One|Raleway|Scada|Varela" rel="stylesheet">
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+<body >
+	<nav>
+		<div class="nav-wrapper">
+			<ul class="right">
+				<li>
+					<a href="pages/stats.html">Statistics</a> <!-- fix this link. add link for home page/plays! -->
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="padding"></div>
+	<div class="container">
+
+	<div>
+		<h4>Top Plays By WPM:</h4>
+		<table>
+      <thead>
+        <tr>
+          <th>Words Per Minute</th>
+          <th>Player</th>
+        </tr>
+      </thead>
+      <tbody id="topplays">
+      </tbody>
+    </table>
+	</div>
+
+	<h4>Search for a player to see their stats:</h4>
+	<form id="user-stats">
+		<input type="text" id="username">
+		<input type="submit" value="Search">
+	</form>
+	<h5 id="player"></h5>
+
+	</div>
+	
+	<script type="text/javascript" src="../src/stats.js"></script>
+</body>
+</html>
