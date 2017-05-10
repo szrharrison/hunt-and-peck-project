@@ -11,9 +11,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
     @user = User.find_or_create_by(username: params[:user][:username])
-    @user.plays.create(plays_params) 
+    @user.plays.create(plays_params)
   end
 
   private
@@ -21,5 +20,5 @@ class Api::V1::UsersController < ApplicationController
   def plays_params
     params.require(:user).require(:play).permit(:wpm, :accuracy, :paragraph_id)
   end
-  
+
 end

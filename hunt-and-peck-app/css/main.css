@@ -11,13 +11,17 @@
   background-color: #ef9a9a;
   border-color: #c62828;
 }
-#test {
+#paragraph {
   font-family: 'Varela', sans-serif;
   font-size: 36px;
   overflow-y: hidden;
   height: 192px;
   border: 2px solid #000;
   padding: 15px;
+}
+
+.padding {
+  padding: 20px 0;
 }
 /*font-family: 'Julius Sans One', sans-serif;*/
 /*font-family: 'Raleway', sans-serif;*/

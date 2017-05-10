@@ -8,19 +8,34 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body >
+	<div class="padding">
+
+	</div>
 	<div class="container">
-		<div id="test"></div>
+		<div id="paragraph">
+			<div id="content">
+
+			</div>
+		</div>
 
 		<input type="text" id="input"name="">
 		<p id="counter"></p>
 		<div id='username'>
-			
+
 		</div>
 	</div>
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="username.js"></script>
+<script type="text/javascript" src="src/models/paragraph.js"></script>
+<script type="text/javascript" src="src/models/user.js"></script>
+<script type="text/javascript" src="src/views/paragraph.js"></script>
+<script type="text/javascript" src="src/views/user.js"></script>
+<script type="text/javascript" src="src/controllers/paragraphs_controller.js"></script>
+<script type="text/javascript" src="src/controllers/users_controller.js"></script>
+<script type="text/javascript" src="src/concerns/key_tracking.js"></script>
+<script type="text/javascript" src="src/concerns/calculations.js"></script>
+<script type="text/javascript" src="src/concerns/matches.js"></script>
+<script type="text/javascript" src="src/app.js"></script>
 </body>
 </html>
