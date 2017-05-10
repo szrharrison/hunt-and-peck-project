@@ -3,6 +3,7 @@
   border: solid 2px;
   border-radius: 8px;
 }
+
 .correct {
   background-color: #c8e6c9;
   border-color: #8bc34a;
@@ -14,7 +15,7 @@
 #paragraph {
   font-family: 'Varela', sans-serif;
   font-size: 36px;
-  overflow-y: hidden;
+  overflow-y: scroll;
   height: 192px;
   border: 2px solid #000;
   padding: 15px;

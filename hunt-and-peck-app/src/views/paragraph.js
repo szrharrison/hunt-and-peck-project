@@ -44,7 +44,7 @@ class ParagraphView {
 
   timer(matchesConcern) {
     var countUp = 0
-    var countDown = 5
+    var countDown = 300
     var paraID = this.paraID
     $('#counter').html(countDown)
     var timer = setInterval(function() {
