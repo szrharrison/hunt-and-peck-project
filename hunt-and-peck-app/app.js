@@ -63,7 +63,7 @@ function getParagraph() {
 
 function setTimer() {
   var countUp = 0
-  var countDown = 60
+  var countDown = 2
   $('#counter').html(countDown)
   var timer = setInterval(function() {
     $("#counter").html(countDown -= 1)

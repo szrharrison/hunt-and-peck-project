@@ -23,9 +23,7 @@ function submitUserInfo(wpm, acc, paraID){
 					play: {
 						wpm: wpm,
 						accuracy: acc,
-						paragraph_id: paraID,
-						dude: 'dude'
-					}
+						paragraph_id: paraID					}
 				}
 			}
 		})
