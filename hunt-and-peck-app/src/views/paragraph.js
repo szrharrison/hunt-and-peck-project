@@ -63,6 +63,7 @@ class ParagraphView {
     const wpmData = []
     $('#counter').html(`${countDown} seconds`)
     const graph = ParagraphView.renderGraph()
+    graph.setSize(null,250)
     const timer = setInterval(function() {
       $("#counter").html(`${countDown -= 1} seconds`)
       countUp += 1

@@ -10,6 +10,7 @@ $(function() {
     $('#input').on('keydown.firstKey', function(e){
       if(e.keyCode !== 32) {
         $('#logo').remove()
+        $('#keyboard_gif').remove()
         $('#input').prop('placeholder', '')
         paragraphView.timer(matchesConcern)
         keyTracking.trackKeys()
