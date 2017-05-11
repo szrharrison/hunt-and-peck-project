@@ -25,10 +25,25 @@
   padding: 20px 0;
 }
 
-input.input#input{
+.container{
+  text-align: center;
+}
+
+input.input#input, #inputUsername {
   font-size: 28px;
   text-align: center;
   font-family: 'Varela', sans-serif;
+  width: 66%;
+  display: inline-block;
+}
+
+#form{
+  text-align: center;
+}
+
+#user_submit {
+  display: inline-block;
+  clear: both;
 }
 
 #counter {
@@ -45,33 +60,6 @@ input.input#input{
 .incorrect_words {
   color: red
 }
-/*font-family: 'Julius Sans One', sans-serif;*/
-/*font-family: 'Raleway', sans-serif;*/
-
-
-g.context g.axis path{ stroke-opacity: 0;}
-g.context g.axis line{ stroke-opacity: .1;}
-
-g.context g.brush rect.background{ fill: rgba(0,0,0,.1);}
-.brush .extent {
-	stroke: #fff;
-	fill-opacity: .125;
-	shape-rendering: crispEdges;
-}
-
-g.context rect.background{
-	fill: rgb(200,200,255);
-	visibility: visible !important;
-}
-
-g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
-
-.axis path, .axis line {
-	fill: none;
-	stroke: #aaa;
-	shape-rendering: crispEdges;
-}
-
 
 .pfn {
   color: red
@@ -79,14 +67,4 @@ g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
 
 .current {
   background-color: #e8eaf6;
-}
-
-
-#form{
-  text-align: center;
-}
-
-#user_submit {
-  display: inline-block;
-
 }

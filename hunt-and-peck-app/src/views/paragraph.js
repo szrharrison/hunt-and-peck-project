@@ -72,7 +72,8 @@ class ParagraphView {
       graph.series[0].addPoint([countUp,wpm])
       if(countDown === 0) {
         clearInterval(timer)
-        $('#input').prop('disabled', true)
+        $('#input').remove()
+
         alert(`You're out of time.`)
         $('#test_results').append(resultsMsg)
         $('#test_results').append(`<ul> <strong>Accuracy:</strong> ${acc}%. <strong>WPM:</strong> ${wpm}</ul>`)

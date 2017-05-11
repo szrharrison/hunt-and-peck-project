@@ -3,7 +3,10 @@ class UsersController {
   	$('#form').on('submit', function(e){
   		e.preventDefault()
   		let player = $('#inputUsername').val()
+      $('#inputUsername').remove()
+      $('#user_submit').remove()
       User.create(player, wpm, acc, paraID)
+
   	})
   }
 }
