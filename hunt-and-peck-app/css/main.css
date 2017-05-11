@@ -83,3 +83,12 @@ input.input#input, #inputUsername {
   font-size: 24px;
   font-family: 'Varela', sans-serif;
 }
+
+#keyboard_tips {
+  display: none;
+}
+
+.sections {
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+}
