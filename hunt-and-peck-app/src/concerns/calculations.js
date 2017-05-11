@@ -6,7 +6,7 @@ class Calculations {
 
   static wordsPerMinute(timeElapsed, matchesConcern){
   	const total = matchesConcern.matches.length
-  	return total * ( this.accuracy(matchesConcern) / 100 ) / (timeElapsed / 60)
+  	return Math.floor(total * ( this.accuracy(matchesConcern) / 100 ) / (timeElapsed / 60))
   }
 
   static wordsCorrect(matchesConcern){

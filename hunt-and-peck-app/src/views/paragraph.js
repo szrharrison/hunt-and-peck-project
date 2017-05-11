@@ -77,7 +77,7 @@ class ParagraphView {
         alert(`You're out of time.`)
         $('#test_results').append(resultsMsg)
         $('#test_results').append(`<ul> <strong>Accuracy:</strong> ${acc}%. <strong>WPM:</strong> ${wpm}</ul>`)
-        $('#test_results').append(`Please type your name in to save your results!`)
+        $('#test_results').append(`<div id="game-over">Please type your name in to save your results!</div>`)
         UserView.new()
         UsersController.create(wpm, acc, view.paraID)
       }

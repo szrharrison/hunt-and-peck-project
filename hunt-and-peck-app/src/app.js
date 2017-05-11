@@ -9,6 +9,7 @@ $(function() {
     const keyTracking = new KeyTracking(paragraphView, paragraphController, matchesConcern)
     $('#input').on('keydown.firstKey', function(e){
       if(e.keyCode !== 32) {
+        $('#logo').remove()
         $('#input').prop('placeholder', '')
         paragraphView.timer(matchesConcern)
         keyTracking.trackKeys()
