@@ -34,5 +34,40 @@
 #counter {
   font-size: 30px;
 }
+
+#test_results{
+  font-size: 24px;
+}
+.correct_words {
+  color: green
+}
+
+.incorrect_words {
+  color: red
+}
 /*font-family: 'Julius Sans One', sans-serif;*/
 /*font-family: 'Raleway', sans-serif;*/
+
+
+g.context g.axis path{ stroke-opacity: 0;}
+g.context g.axis line{ stroke-opacity: .1;}
+
+g.context g.brush rect.background{ fill: rgba(0,0,0,.1);}
+.brush .extent {
+	stroke: #fff;
+	fill-opacity: .125;
+	shape-rendering: crispEdges;
+}
+
+g.context rect.background{
+	fill: rgb(200,200,255);
+	visibility: visible !important;
+}
+
+g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #aaa;
+	shape-rendering: crispEdges;
+}
