@@ -58,11 +58,12 @@ class ParagraphView {
 
   timer(matchesConcern) {
     let countUp = 0
-    let countDown = 5
+    let countDown = 30
     const view = this
     const wpmData = []
     $('#counter').html(`${countDown} seconds`)
     const graph = ParagraphView.renderGraph()
+    graph.setSize(null,250)
     const timer = setInterval(function() {
       $("#counter").html(`${countDown -= 1} seconds`)
       countUp += 1
