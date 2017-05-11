@@ -6,13 +6,40 @@ $(function() {
     url: "http://localhost:3000/api/v1/statistics/topplays",
     success: function(stats){
       // iterate over data and render each stat
-      var lis = stats.map(function(stat){
+      stats.forEach(function(stat){
         const $wpm = stat['wpm']
         const $user = stat['user']['username']
         $('#topplays').append(`<tr><td>${$wpm}</td><td>${$user}</td></tr>`)
       })
     }
   })
+
+
+
+  //get username from form
+  $('form#user-stats').on('submit', (e) => {
+    e.preventDefault()
+    $username = $('#username').val()
+
+    $.ajax({
+      method: 'GET',
+      url: "http://localhost:3000/api/v1/users/find",
+      data: {username: $username},
+      success: function(data){
+        console.log(data)
+        $('#player-stats').empty()
+        $('#wpm-th').html('Words Per Minute')
+        $('#acc-th').html('Accuracy')
+        $('#player-name').html(`Stats for ${data['username']}:`)
+        data['plays'].forEach(function(play){
+          const $wpm = play['wpm']
+          const $acc = play['accuracy']
+          $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
+        })
+      }
+    })
+  })
+
 
   // // ajax request for most accurate users
   // // the response i'm getting isn't something the app can work with
@@ -25,25 +52,6 @@ $(function() {
   //     })
   //   }
   // })
-
-  //get username from form
-  $('form#user-stats').on('submit', (e) => {
-      e.preventDefault()
-      $username = $('#username').val()
-
-      $.ajax({
-        method: 'GET',
-        url: "http://localhost:3000/api/v1/users/find",
-        data: {username: $username},
-        success: function(data){
-          console.log(data)
-          $('#player').html(`${data['username']}`)
-        }
-      })
-    })
-
-
-
 
   // let gettingParagraph = Paragraph.random()
 

@@ -13,9 +13,13 @@
 <body >
 	<nav>
 		<div class="nav-wrapper">
+			<a href="../app.html" class="brand-logo center">Hunt N Peck</a>
 			<ul class="right">
 				<li>
-					<a href="pages/stats.html">Statistics</a> <!-- fix this link. add link for home page/plays! -->
+					<a href="../app.html">Play!</a>
+				</li>
+				<li>
+					<a href="stats.html">Statistics</a>
 				</li>
 			</ul>
 		</div>
@@ -23,26 +27,42 @@
 	<div class="padding"></div>
 	<div class="container">
 
-	<div>
-		<h4>Top Plays By WPM:</h4>
-		<table>
-      <thead>
-        <tr>
-          <th>Words Per Minute</th>
-          <th>Player</th>
-        </tr>
-      </thead>
-      <tbody id="topplays">
-      </tbody>
-    </table>
-	</div>
+	<div class="row">
+		<div class="col s6">
+			<h5 class="center-align">Top Plays By WPM</h5><br>
+			<table class="centered striped">
+	      <thead>
+	        <tr>
+	          <th>Words Per Minute</th>
+	          <th>Player</th>
+	        </tr>
+	      </thead>
+	      <tbody id="topplays">
+	      </tbody>
+	    </table>
+    </div>
 
-	<h4>Search for a player to see their stats:</h4>
-	<form id="user-stats">
-		<input type="text" id="username">
-		<input type="submit" value="Search">
-	</form>
-	<h5 id="player"></h5>
+    <div class="col s5 offset-s1">
+    	<h5>Search for a player to see their stats:</h5>
+			<form id="user-stats">
+				<input type="text" id="username">
+				<input type="submit" value="Search">
+			</form>
+			<div>
+				<h5 id="player-name"></h5>
+				<table class="striped">
+		      <thead>
+		        <tr>
+		          <th id="wpm-th"></th>
+		          <th id="acc-th"></th>
+		        </tr>
+		      </thead>
+		      <tbody id="player-stats">
+		      </tbody>
+		    </table>
+			</div>
+    </div>
+	</div>
 
 	</div>
 	
