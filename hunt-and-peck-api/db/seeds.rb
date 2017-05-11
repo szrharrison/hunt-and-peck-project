@@ -71,7 +71,7 @@ body language and expression. He sighed in frustration and anger at life's seemi
 deaths his own inadequacies that he felt prevented him from solving this case. Lost in his thoughts, he failed to hear
 the approaching footsteps that halted before him until the voice brought him back to reality."
 
-p6 = "When I look at the three massive manuscript volumes which contain our work for the year 1894, I confess that it is
+p6 = "When I look at the three massive manuscript volumes which contain our work for the year I confess that it is
 very difficult for me, out of such a wealth of material, to select the cases which are most interesting in themselves,
 and at the same time most conducive to a display of those peculiar powers for which my friend was famous. As I turn over
 the pages, I see my notes upon the repulsive story of the red leech and the terrible death of Crosby, the banker. Here
@@ -87,10 +87,10 @@ the wind howled down Baker Street, while the rain beat fiercely against the wind
 depths of the town, with ten miles of man's handiwork on every side of us, to feel the iron grip of Nature, and to be
 conscious that to the huge elemental forces all London was no more than the molehills that dot the fields."
 
-# Paragraph.create(content: p1)
-# Paragraph.create(content: p2)
-# Paragraph.create(content: p3)
-# Paragraph.create(content: p4)
-# Paragraph.create(content: p5)
+Paragraph.create(content: p1)
+Paragraph.create(content: p2)
+Paragraph.create(content: p3)
+Paragraph.create(content: p4)
+Paragraph.create(content: p5)
 Paragraph.create(content: p6)
 
