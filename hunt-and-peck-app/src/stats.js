@@ -1,5 +1,17 @@
 $(function() {
 
+  const tableHtml = `<h4 id="player-name" class="heading"></h4><br>
+                    <table class="centered striped">
+                      <thead>
+                        <tr>
+                          <th id="wpm-th"></th>
+                          <th id="acc-th"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="player-stats">
+                      </tbody>
+                    </table><br><br><div class="divider"></div>`
+
   // ajax request for top 10 plays by wpms
   $.ajax({
     method: 'GET',
@@ -14,52 +26,35 @@ $(function() {
     }
   })
 
-
-
   //get username from form
   $('form#user-stats').on('submit', (e) => {
     e.preventDefault()
     $username = $('#username-input').val()
-    $('#username-input').val('')
+    $('#username-input').val('').blur()
 
     $.ajax({
       method: 'GET',
       url: "http://localhost:3000/api/v1/users/find",
       data: {username: $username},
       success: function(data){
-        console.log(data)
-        $('#player-stats').empty()
         if (data) {
+          $('#table').children().remove()
+          $('#table').append(tableHtml)
           $('#wpm-th').html('Words Per Minute')
           $('#acc-th').html('Accuracy')
-          $('#player-name').html(`Stats for ${data['username']}:`)
+          $('#player-name').html(`Stats for ${data['username']}`)
           data['plays'].forEach(function(play){
             const $wpm = play['wpm']
             const $acc = play['accuracy']
             $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
         })
         }else{
-          $('#player-name').html(`<span class="pfn">Player not found</span>`)
+          $('#table').append(`<h4><span class="pfn">Player not found</span></h4>`)
         }
 
       }
     })
   })
 
-
-  // // ajax request for most accurate users
-  // // the response i'm getting isn't something the app can work with
-  // $.ajax({
-  //   method: 'GET',
-  //   url: "http://localhost:3000/api/v1/statistics/mostaccurateusers",
-  //   success: function(stats){
-  //     stats.forEach(function(stat){
-  //       console.log(`ACCURACY: ${stats['accuracy']}`)
-  //     })
-  //   }
-  // })
 })
 
- // + Top 10 plays by WPM
- // + search for username stats
- // + Top 10 most accurate user
