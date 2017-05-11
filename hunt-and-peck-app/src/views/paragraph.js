@@ -52,11 +52,14 @@ class ParagraphView {
       countUp += 1
       const acc = Calculations.accuracy(matchesConcern)
       const wpm = Calculations.wordsPerMinute(countUp, matchesConcern)
+      const resultsMsg = Calculations.wordsCorrect(matchesConcern)
       console.log(wpm)
       if(countDown === 0) {
         clearInterval(timer)
         $('#input').prop('disabled', true)
-        alert(`You're out of time. Accuracy: ${acc}%. WPM: ${wpm}`)
+        alert(`You're out of time.`)
+        $('#test_results').append(resultsMsg)
+        $('#test_results').append(`<ul> <strong>Accuracy:</strong> ${acc}%. <strong>WPM:</strong> ${wpm}</ul>`)
         UserView.new()
         UsersController.create(wpm, acc, paraID)
       }

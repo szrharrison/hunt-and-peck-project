@@ -34,5 +34,16 @@
 #counter {
   font-size: 30px;
 }
+
+#test_results{
+  font-size: 24px;
+}
+.correct_words {
+  color: green
+}
+
+.incorrect_words {
+  color: red
+}
 /*font-family: 'Julius Sans One', sans-serif;*/
 /*font-family: 'Raleway', sans-serif;*/
