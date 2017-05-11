@@ -78,3 +78,8 @@ input.input#input, #inputUsername {
   text-align: center;
   font-family: 'Varela', sans-serif;
 }
+
+#keyboard_caption {
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+}
