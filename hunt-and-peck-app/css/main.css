@@ -80,3 +80,13 @@ g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
 .current {
   background-color: #e8eaf6;
 }
+
+
+#form{
+  text-align: center;
+}
+
+#user_submit {
+  display: inline-block;
+
+}

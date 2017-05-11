@@ -46,7 +46,7 @@ class ParagraphView {
 
   timer(matchesConcern) {
     let countUp = 0
-    let countDown = 60
+    let countDown = 5
     const view = this
     const wpmData = []
     $('#counter').html(`${countDown} seconds`)
