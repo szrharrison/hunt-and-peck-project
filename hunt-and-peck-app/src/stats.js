@@ -28,14 +28,19 @@ $(function() {
       success: function(data){
         console.log(data)
         $('#player-stats').empty()
-        $('#wpm-th').html('Words Per Minute')
-        $('#acc-th').html('Accuracy')
-        $('#player-name').html(`Stats for ${data['username']}:`)
-        data['plays'].forEach(function(play){
-          const $wpm = play['wpm']
-          const $acc = play['accuracy']
-          $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
+        if (data) {
+          $('#wpm-th').html('Words Per Minute')
+          $('#acc-th').html('Accuracy')
+          $('#player-name').html(`Stats for ${data['username']}:`)
+          data['plays'].forEach(function(play){
+            const $wpm = play['wpm']
+            const $acc = play['accuracy']
+            $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
         })
+        }else{
+          $('#player-name').html(`<span class="pfn">Player not found</span>`)
+        }
+
       }
     })
   })
@@ -51,23 +56,6 @@ $(function() {
   //       console.log(`ACCURACY: ${stats['accuracy']}`)
   //     })
   //   }
-  // })
-
-  // let gettingParagraph = Paragraph.random()
-
-  // gettingParagraph.then( function(paragraph) {
-  //   const paragraphController = new ParagraphsController(paragraph)
-  //   const paragraphView = new ParagraphView( paragraphController.randomText, paragraph.id )
-  //   const matchesConcern = new Matches()
-  //   const keyTracking = new KeyTracking(paragraphView, paragraphController, matchesConcern)
-  //   paragraphView.render()
-  //   $('#input').on('keydown.firstKey', function(e){
-  //     if(e.keyCode !== 32) {
-  //       paragraphView.timer(matchesConcern)
-  //       keyTracking.trackKeys()
-  //       $('#input').off('keydown.firstKey')
-  //     }
-  //   })
   // })
 })
 

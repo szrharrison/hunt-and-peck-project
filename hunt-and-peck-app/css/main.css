@@ -25,10 +25,10 @@
   padding: 20px 0;
 }
 
-.input {
+input.input#input{
+  font-size: 28px;
   text-align: center;
   font-family: 'Varela', sans-serif;
-  font-size: 24px;
 }
 
 #counter {
@@ -72,7 +72,21 @@ g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
 	shape-rendering: crispEdges;
 }
 
+
+.pfn {
+  color: red
+}
+
 .current {
   background-color: #e8eaf6;
 }
 
+
+#form{
+  text-align: center;
+}
+
+#user_submit {
+  display: inline-block;
+
+}
