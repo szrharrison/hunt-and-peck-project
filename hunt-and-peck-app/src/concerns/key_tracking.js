@@ -3,22 +3,6 @@ class KeyTracking {
     this.view = view
     this.controller = controller
     this.matches = matches
-    const wrapWordIndexes = []
-    const wrapWords = []
-    let current = $('#content')
-    $('#content').text(this.controller.words[0])
-    let height = current.height()
-
-      for(let i = 1; i < this.controller.words.length; i++){
-          current.text(current.text() + ' ' + this.controller.words[i])
-          if ( current.height() > height ) {
-              height = current.height()
-              wrapWordIndexes.push(i-1)
-              wrapWords.push(this.controller.words[i-1])
-          }
-      }
-      wrapWordIndexes.shift()
-      this.wrapWordIndexes = wrapWordIndexes
   }
 
   trackKeys() {
@@ -27,7 +11,7 @@ class KeyTracking {
     let lineNum = 1
     let view = this.view
     let matches = this.matches
-    let wrapWordIndex = this.wrapWordIndexes
+    let wrapWordIndex = this.view.wrapWordIndexes
     view.highlight($('#paragraph #content'), text[counter], 'current')
     $('#input').on('keydown.trackKeys', function(e) {
       if(e.keyCode === 32) {
@@ -37,19 +21,17 @@ class KeyTracking {
           lineNum ++
         }
         let userInput = $(this).val()
-        if (userInput === text[counter]){
-          if ($(`span:contains(${text[counter]}).highlight.current`)[0]){
-            Array.from($(`span:contains(${text[counter]}).highlight.current`)).forEach(function(el){
-              el.className= 'highlight correct'
-            })
+        if ( userInput === text[counter]) {
+          if( $(`#word-${counter}`)[0] ){
+            $(`#word-${counter}`)[0].className= 'highlight correct'
           }
           matches.addMatch(1)
-        }else{
-          $(`span:contains(${text[counter]}).highlight.current`)[0].className = 'highlight wrong'
-
+        } else {
+          $(`#word-${counter}`)[0].className = 'highlight wrong'
           matches.addMatch(0)
         }
-        view.highlight($('#paragraph #content'), text[counter + 1], 'current')
+
+        $(`#word-${counter + 1}`)[0].className = 'highlight current'
         counter ++
         $(this).val('')
       }
@@ -57,7 +39,5 @@ class KeyTracking {
     })
   }
 
-  
+
 }
-
-

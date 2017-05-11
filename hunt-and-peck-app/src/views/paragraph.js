@@ -1,14 +1,26 @@
 class ParagraphView {
 
-  constructor(paragraph, paraID ) {
-    this.paragraph = paragraph
-    this.paraID = paraID
-
+  constructor(controller ) {
+    this.paragraph = controller.randomText
+    this.controller = controller
+    this.paraID = controller.paraID
   }
 
   render() {
-    $('#paragraph #content').html(this.paragraph)
+    const wrapWordIndexes = []
+    let current = $('#content')
+    $('#content').html(`<span id="word-0" class="next-word">${this.controller.words[0]}</span>`)
+    let height = current.height()
 
+    for(let i = 1; i < this.controller.words.length; i++){
+        current.html(`${current.html()} <span id="word-${i}" class="next-word">${this.controller.words[i]}</span>`)
+        if ( current.height() > height ) {
+            height = current.height()
+            wrapWordIndexes.push(i-1)
+        }
+    }
+    wrapWordIndexes.shift()
+    this.wrapWordIndexes = wrapWordIndexes
   }
 
   highlight($nodes, pattern, className) {
