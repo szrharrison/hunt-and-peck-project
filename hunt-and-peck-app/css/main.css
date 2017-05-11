@@ -24,5 +24,15 @@
 .padding {
   padding: 20px 0;
 }
+
+.input {
+  text-align: center;
+  font-family: 'Varela', sans-serif;
+  font-size: 24px;
+}
+
+#counter {
+  font-size: 30px;
+}
 /*font-family: 'Julius Sans One', sans-serif;*/
 /*font-family: 'Raleway', sans-serif;*/

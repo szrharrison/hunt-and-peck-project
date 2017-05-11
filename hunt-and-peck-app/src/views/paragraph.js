@@ -44,11 +44,11 @@ class ParagraphView {
 
   timer(matchesConcern) {
     var countUp = 0
-    var countDown = 300
+    var countDown = 5
     var paraID = this.paraID
-    $('#counter').html(countDown)
+    $('#counter').html(`${countDown} seconds`)
     var timer = setInterval(function() {
-      $("#counter").html(countDown -= 1)
+      $("#counter").html(`${countDown -= 1} seconds`)
       countUp += 1
       const acc = Calculations.accuracy(matchesConcern)
       const wpm = Calculations.wordsPerMinute(countUp, matchesConcern)
