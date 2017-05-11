@@ -3,6 +3,7 @@
   border: solid 2px;
   border-radius: 8px;
 }
+
 .correct {
   background-color: #c8e6c9;
   border-color: #8bc34a;
@@ -14,7 +15,7 @@
 #paragraph {
   font-family: 'Varela', sans-serif;
   font-size: 36px;
-  overflow-y: hidden;
+  overflow-y: scroll;
   height: 192px;
   border: 2px solid #000;
   padding: 15px;
@@ -22,6 +23,27 @@
 
 .padding {
   padding: 20px 0;
+}
+
+.input {
+  text-align: center;
+  font-family: 'Varela', sans-serif;
+  font-size: 24px;
+}
+
+#counter {
+  font-size: 30px;
+}
+
+#test_results{
+  font-size: 24px;
+}
+.correct_words {
+  color: green
+}
+
+.incorrect_words {
+  color: red
 }
 /*font-family: 'Julius Sans One', sans-serif;*/
 /*font-family: 'Raleway', sans-serif;*/
