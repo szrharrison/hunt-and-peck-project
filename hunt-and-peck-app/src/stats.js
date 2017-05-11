@@ -19,7 +19,8 @@ $(function() {
   //get username from form
   $('form#user-stats').on('submit', (e) => {
     e.preventDefault()
-    $username = $('#username').val()
+    $username = $('#username-input').val()
+    $('#username-input').val('')
 
     $.ajax({
       method: 'GET',

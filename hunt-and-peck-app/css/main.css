@@ -68,3 +68,13 @@ input.input#input, #inputUsername {
 .current {
   background-color: #e8eaf6;
 }
+
+.heading {
+  font-family: 'Varela', sans-serif;
+}
+
+#username-input {
+  font-size: 28px;
+  text-align: center;
+  font-family: 'Varela', sans-serif;
+}
