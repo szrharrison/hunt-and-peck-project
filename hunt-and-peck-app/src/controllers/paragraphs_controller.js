@@ -8,7 +8,7 @@ class ParagraphsController {
   }
 
   static randomize(paragraph) {
-    let pArray = paragraph.replace(/[\.,?;:!"]/g, ' ').split(' ')
+    let pArray = paragraph.replace(/[\.,?;:!"\s]/g, ' ').split(' ')
     pArray = clean(pArray, '')
     for (let i = pArray.length; i; i--) {
       // Set j to a random element that doesn't include the current element or any elements afterwards
@@ -18,7 +18,10 @@ class ParagraphsController {
     }
     return pArray
   }
+
 }
+  
+
 
 function clean(array, deleteValue) {
   for (var i = 0; i < array.length; i++) {
