@@ -4,8 +4,8 @@ $(function() {
                     <table class="centered striped">
                       <thead>
                         <tr>
-                          <th id="wpm-th"></th>
-                          <th id="acc-th"></th>
+                          <th id="wpm-th" class="tb-col-width"></th>
+                          <th id="acc-th" class="tb-col-width"></th>
                         </tr>
                       </thead>
                       <tbody id="player-stats">
@@ -49,7 +49,7 @@ $(function() {
             $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
         })
         }else{
-          $('#table').append(`<h4><span class="pfn">Player not found</span></h4>`)
+          $('#table').append(`<h4><span class="pfn heading">Player not found</span></h4>`)
         }
 
       }

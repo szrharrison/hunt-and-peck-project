@@ -92,3 +92,7 @@ input.input#input, #inputUsername {
   font-size: 24px;
   font-family: 'Varela', sans-serif;
 }
+
+.tb-col-width {
+  width: 50%;
+}
