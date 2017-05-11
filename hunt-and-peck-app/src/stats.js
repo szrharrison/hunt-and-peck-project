@@ -28,14 +28,19 @@ $(function() {
       success: function(data){
         console.log(data)
         $('#player-stats').empty()
-        $('#wpm-th').html('Words Per Minute')
-        $('#acc-th').html('Accuracy')
-        $('#player-name').html(`Stats for ${data['username']}:`)
-        data['plays'].forEach(function(play){
-          const $wpm = play['wpm']
-          const $acc = play['accuracy']
-          $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
+        if (data) {
+          $('#wpm-th').html('Words Per Minute')
+          $('#acc-th').html('Accuracy')
+          $('#player-name').html(`Stats for ${data['username']}:`)
+          data['plays'].forEach(function(play){
+            const $wpm = play['wpm']
+            const $acc = play['accuracy']
+            $('#player-stats').append(`<tr><td>${$wpm}</td><td>${$acc}</td></tr>`)
         })
+        }else{
+          $('#player-name').html(`<span class="pfn">Player not found</span>`)
+        }
+
       }
     })
   })

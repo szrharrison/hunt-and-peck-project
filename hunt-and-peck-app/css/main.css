@@ -71,3 +71,7 @@ g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
 	stroke: #aaa;
 	shape-rendering: crispEdges;
 }
+
+.pfn {
+  color: red
+}
