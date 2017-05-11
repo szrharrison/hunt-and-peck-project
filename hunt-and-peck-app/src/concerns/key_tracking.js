@@ -7,8 +7,11 @@ class KeyTracking {
   trackKeys() {
     const text = this.controller.words
     let counter = 0
+    let letterCounter = 0
     let view = this.view
     let matches = this.matches
+    let singleWordArray = []
+    singleWordArray.push(text[counter])
     view.highlight($('#paragraph #content'), text[counter], 'current')
     $('#input').on('keydown.trackKeys', function(e) {
       if(e.keyCode === 32) {
