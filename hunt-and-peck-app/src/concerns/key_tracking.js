@@ -16,14 +16,14 @@ class KeyTracking {
         let userInput = $(this).val()
         if (userInput === text[counter]){
           console.log(text[counter])
-          if ($(`#paragraph #content span:contains(${text[counter]})`)[0]){
-            Array.from($(`#paragraph #content span:contains(${text[counter]})`)).forEach(function(el){
+          if ($(`span:contains(${text[counter]}).highlight.current`)[0]){
+            Array.from($(`span:contains(${text[counter]}).highlight.current`)).forEach(function(el){
               el.className= 'highlight correct'
             })
           }
           matches.addMatch(1)
         }else{
-          $(`#paragraph #content span:contains(${text[counter]})`)[0].className = 'highlight wrong'
+          $(`span:contains(${text[counter]}).highlight.current`)[0].className = 'highlight wrong'
 
           matches.addMatch(0)
         }
