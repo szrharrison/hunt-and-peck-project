@@ -3,7 +3,7 @@ $(function() {
 
   gettingParagraph.then( function(paragraph) {
     const paragraphController = new ParagraphsController(paragraph)
-    const paragraphView = new ParagraphView( paragraphController.randomText, paragraph.id )
+    const paragraphView = new ParagraphView( paragraphController.randomText, paragraph.id)
     const matchesConcern = new Matches()
     const keyTracking = new KeyTracking(paragraphView, paragraphController, matchesConcern)
     paragraphView.render()
@@ -16,3 +16,4 @@ $(function() {
     })
   })
 })
+

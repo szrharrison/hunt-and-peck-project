@@ -1,12 +1,14 @@
 class ParagraphView {
 
-  constructor(paragraph, paraID) {
+  constructor(paragraph, paraID ) {
     this.paragraph = paragraph
     this.paraID = paraID
+
   }
 
   render() {
     $('#paragraph #content').html(this.paragraph)
+
   }
 
   highlight($nodes, pattern, className) {

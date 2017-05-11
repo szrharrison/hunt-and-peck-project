@@ -1,6 +1,6 @@
 .highlight {
-  padding: 0 10px;
-  border: solid 2px;
+/*  padding: 0 2px;
+  border: solid 2px;*/
   border-radius: 8px;
 }
 
@@ -15,7 +15,7 @@
 #paragraph {
   font-family: 'Varela', sans-serif;
   font-size: 36px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   height: 192px;
   border: 2px solid #000;
   padding: 15px;
@@ -71,3 +71,8 @@ g.wpm path.chart{ fill: rgba(127,201,127,0.5);}
 	stroke: #aaa;
 	shape-rendering: crispEdges;
 }
+
+.current {
+  background-color: #e8eaf6;
+}
+
