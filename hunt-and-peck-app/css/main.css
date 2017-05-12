@@ -74,9 +74,81 @@ input.input#input, #inputUsername {
 }
 
 #username-input {
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
   font-family: 'Varela', sans-serif;
+}
+
+#counter {
+  position: fixed;
+  right: 0;
+  top: 84px;
+  text-align: center;
+  display: none;
+}
+
+#count-down {
+  z-index: 20;
+}
+
+:root {
+  --circle-size: 120px;
+  --rotation: rotate(0deg);
+  --full: rotate(180deg);
+  --duration: 60s linear;
+}
+.radial-progress {
+  background-color: #ffee6e;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+}
+.circle .fill, .circle .mask {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  position: absolute;
+  border-radius: 50%;
+  transition: -webkit-transform var(--duration);
+  transition: -ms-transform var(--duration);
+  transition: transform var(--duration);
+  -webkit-backface-visibility: hidden;
+}
+.circle .fill {
+  background-color: #7cb5ec;
+  /* rect(<top>, <right>, <bottom>, <left>) */
+  clip: rect(0px, calc(var(--circle-size) / 2), var(--circle-size), 0px);
+}
+.circle .mask {
+  /* rect(<top>, <right>, <bottom>, <left>) */
+  clip: rect(0px, var(--circle-size), var(--circle-size), calc(var(--circle-size) / 2));
+}
+.counting .circle .fill, .counting .circle .mask.full  {
+  -webkit-transform: var(--full);
+  -ms-transform: var(--full);
+  transform: var(--full);
+}
+.counting .circle .fill.fix {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.inset {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-left: calc( (var(--circle-size) - 50px) / 2);
+  margin-top: calc( (var(--circle-size) - 50px) / 2);
+  background-color: #fbfbfb;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px rgba(0,0,0,0.2);
+}
+.shadow {
+  width: var(--circle-size);
+      height: var(--circle-size);
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: 6px 6px 10px rgba(0,0,0,0.2) inset;
 }
 
 #keyboard_caption {
@@ -91,4 +163,8 @@ input.input#input, #inputUsername {
 .sections {
   font-size: 24px;
   font-family: 'Varela', sans-serif;
+}
+
+.tb-col-width {
+  width: 50%;
 }
