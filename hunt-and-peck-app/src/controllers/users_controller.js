@@ -6,7 +6,7 @@ class UsersController {
       $('#inputUsername').remove()
       $('#user_submit').remove()
       $('#game-over').html(`Thank you for playing, ${player}!<br><br>`)
-      $('#test_results').append('<a class="btn purple lighten-3" href="../hunt-and-peck-app/app.html">Play Again!</a>')
+      $('#test_results').append('<a class="btn purple lighten-3" href="app.html">Play Again!</a>')
       User.create(player, wpm, acc, paraID)
 
   	})

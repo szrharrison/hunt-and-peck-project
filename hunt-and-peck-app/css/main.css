@@ -81,14 +81,14 @@ input.input#input, #inputUsername {
 
 #counter {
   position: fixed;
-  right: 0;
-  top: 84px;
+  right: 20px;
+  bottom: 64px;
   text-align: center;
   display: none;
 }
 
 #count-down {
-  z-index: 20;
+  padding-top: 3px;
 }
 
 :root {
