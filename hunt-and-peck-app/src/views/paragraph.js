@@ -58,14 +58,16 @@ class ParagraphView {
 
   timer(matchesConcern) {
     let countUp = 0
-    let countDown = 30
+    let countDown = 60
     const view = this
     const wpmData = []
-    $('#counter').html(`${countDown} seconds`)
+    $('#counter').fadeIn(800)
+    $('#counter #count-down').html(`${countDown}`)
     const graph = ParagraphView.renderGraph()
     graph.setSize(null,250)
+    $('#counter').addClass('counting')
     const timer = setInterval(function() {
-      $("#counter").html(`${countDown -= 1} seconds`)
+      $("#counter #count-down").html(`${countDown -= 1}`)
       countUp += 1
       const acc = Calculations.accuracy(matchesConcern)
       const wpm = Calculations.wordsPerMinute(countUp, matchesConcern)
