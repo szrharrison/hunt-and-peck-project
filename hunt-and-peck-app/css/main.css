@@ -33,8 +33,6 @@ input.input#input, #inputUsername {
   font-size: 28px;
   text-align: center;
   font-family: 'Varela', sans-serif;
-  width: 66%;
-  display: inline-block;
 }
 
 #form{
@@ -72,8 +70,9 @@ input.input#input, #inputUsername {
 .heading {
   font-family: 'Varela', sans-serif;
 }
-
-#username-input {
+#username .input-field {
+  width: 66%;
+  display: inline-block;
   font-size: 24px;
   text-align: center;
   font-family: 'Varela', sans-serif;

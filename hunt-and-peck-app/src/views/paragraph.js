@@ -58,7 +58,7 @@ class ParagraphView {
 
   timer(matchesConcern) {
     let countUp = 0
-    let countDown = 5
+    let countDown = 60
     const view = this
     const wpmData = []
     $('#counter').fadeIn(800)
