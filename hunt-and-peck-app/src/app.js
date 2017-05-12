@@ -18,13 +18,15 @@ $(function() {
     const matchesConcern = new Matches()
     const keyTracking = new KeyTracking(paragraphView, paragraphController, matchesConcern)
     $('#input').on('keydown.firstKey', function(e){
-      if(e.keyCode !== 32) {
+      if(e.keyCode >= 65 && e.keyCode <= 90) {
         $('#logo').remove()
         $('#keyboard_gif').remove()
         $('#input').prop('placeholder', '')
         paragraphView.timer(matchesConcern)
         keyTracking.trackKeys()
         $('#input').off('keydown.firstKey')
+      } else {
+        e.preventDefault()
       }
     })
   })

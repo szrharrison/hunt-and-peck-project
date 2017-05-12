@@ -33,11 +33,9 @@ input.input#input, #inputUsername {
   font-size: 28px;
   text-align: center;
   font-family: 'Varela', sans-serif;
-  width: 66%;
-  display: inline-block;
 }
 
-#form{
+#username form {
   text-align: center;
 }
 
@@ -72,8 +70,9 @@ input.input#input, #inputUsername {
 .heading {
   font-family: 'Varela', sans-serif;
 }
-
-#username-input {
+#username .input-field {
+  width: 66%;
+  display: inline-block;
   font-size: 24px;
   text-align: center;
   font-family: 'Varela', sans-serif;
@@ -81,14 +80,14 @@ input.input#input, #inputUsername {
 
 #counter {
   position: fixed;
-  right: 0;
-  top: 84px;
+  right: 20px;
+  bottom: 64px;
   text-align: center;
   display: none;
 }
 
 #count-down {
-  z-index: 20;
+  padding-top: 3px;
 }
 
 :root {
