@@ -1,7 +1,7 @@
 $(function() {
   let gettingParagraph = Paragraph.random()
 
-  $('#more_info').click(function(){
+  $('#more_info').on('click',function(){
     if ($('#more_info').html().includes("More Tips")){
       $('#more_info').html(`<i class="material-icons left">swap_vertical_circle</i>Less Tips`)
     }else{
