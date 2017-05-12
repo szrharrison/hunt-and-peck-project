@@ -150,3 +150,21 @@ input.input#input, #inputUsername {
       border-radius: 50%;
       box-shadow: 6px 6px 10px rgba(0,0,0,0.2) inset;
 }
+
+#keyboard_caption {
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+}
+
+#keyboard_tips {
+  display: none;
+}
+
+.sections {
+  font-size: 24px;
+  font-family: 'Varela', sans-serif;
+}
+
+.tb-col-width {
+  width: 50%;
+}
