@@ -13,6 +13,21 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body >
+	<span id="counter">
+		<div class="radial-progress">
+	    <div class="circle">
+				<div class="mask full">
+					<div class="fill"></div>
+				</div>
+				<div class="mask half">
+		      <div class="fill"></div>
+					<div class="fill fix"></div>
+		    </div>
+				<div class="shadow"></div>
+			</div>
+			<div class="inset" id="count-down"></div>
+		</div>
+	</span>
 	<nav>
 		<div class="nav-wrapper purple lighten-3">
 			<div class="row">
@@ -23,7 +38,7 @@
 					</li>
 				</div>
 					<div class="col s7">
-						<span class="left" id="counter"></span>
+
 					</div>
 				</ul>
 			</div>
@@ -51,7 +66,7 @@
 		<input type="text" id="input" class="input" name="" placeholder="When ready, start typing here">
 
 
-		
+
 	</div>
 <script type="text/javascript" src="src/models/paragraph.js"></script>
 <script type="text/javascript" src="src/models/user.js"></script>
