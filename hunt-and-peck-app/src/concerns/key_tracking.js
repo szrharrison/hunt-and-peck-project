@@ -16,24 +16,26 @@ class KeyTracking {
     $('#input').on('keydown.trackKeys', function(e) {
       if(e.keyCode === 32) {
         e.preventDefault()
-        if (wrapWordIndex.includes(counter)){
-          $('#paragraph').animate({scrollTop: 54 * lineNum + 10}, 1000)
-          lineNum ++
-        }
         let userInput = $(this).val()
-        if ( userInput === text[counter]) {
-          if( $(`#word-${counter}`)[0] ){
-            $(`#word-${counter}`)[0].className= 'highlight correct'
+        if ( userInput !== '' ) {
+          if (wrapWordIndex.includes(counter)){
+            $('#paragraph').animate({scrollTop: 54 * lineNum + 10}, 1000)
+            lineNum ++
           }
-          matches.addMatch(1)
-        } else {
-          $(`#word-${counter}`)[0].className = 'highlight wrong'
-          matches.addMatch(0)
-        }
+          if ( userInput === text[counter]) {
+            if( $(`#word-${counter}`)[0] ){
+              $(`#word-${counter}`)[0].className= 'highlight correct'
+            }
+            matches.addMatch(1)
+          } else {
+            $(`#word-${counter}`)[0].className = 'highlight wrong'
+            matches.addMatch(0)
+          }
 
-        $(`#word-${counter + 1}`)[0].className = 'highlight current'
-        counter ++
-        $(this).val('')
+          $(`#word-${counter + 1}`)[0].className = 'highlight current'
+          counter ++
+          $(this).val('')
+        }
       }
 
     })

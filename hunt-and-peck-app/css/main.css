@@ -35,7 +35,7 @@ input.input#input, #inputUsername {
   font-family: 'Varela', sans-serif;
 }
 
-#form{
+#username form {
   text-align: center;
 }
 
