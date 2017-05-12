@@ -10,7 +10,7 @@ $(function() {
                       </thead>
                       <tbody id="player-stats">
                       </tbody>
-                    </table><br><br><div class="divider"></div>`
+                    </table><br><br><div class="divider"></div><br><br>`
 
   // ajax request for top 10 plays by wpms
   $.ajax({
