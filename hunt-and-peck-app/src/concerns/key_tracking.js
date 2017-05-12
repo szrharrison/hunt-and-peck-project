@@ -7,12 +7,14 @@ class KeyTracking {
 
   trackKeys() {
     const text = this.controller.words
+    let firstLetter = text[0][0]
+    console.log(firstLetter)
     let counter = 0
     let lineNum = 1
     let view = this.view
     let matches = this.matches
     let wrapWordIndex = this.view.wrapWordIndexes
-    view.highlight($('#paragraph #content'), text[counter], 'current')
+    $(`#word-0`)[0].className = 'highlight current'
     $('#input').on('keydown.trackKeys', function(e) {
       if(e.keyCode === 32) {
         e.preventDefault()
@@ -23,8 +25,8 @@ class KeyTracking {
             lineNum ++
           }
           if ( userInput === text[counter]) {
-            if( $(`#word-${counter}`)[0] ){
-              $(`#word-${counter}`)[0].className= 'highlight correct'
+            if ( $(`#word-${counter}`)[0] ) {
+              $(`#word-${counter}`)[0].className = 'highlight correct'
             }
             matches.addMatch(1)
           } else {
