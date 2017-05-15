@@ -167,3 +167,11 @@ input.input#input, #inputUsername {
 .tb-col-width {
   width: 50%;
 }
+
+#chart_div {
+  position: fixed;
+  left: 20px;
+  bottom: 150px;
+  text-align: center;
+  display: none;
+}

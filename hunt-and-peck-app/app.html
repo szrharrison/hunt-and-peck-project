@@ -4,6 +4,7 @@
 	<title>Hunt 'N' Peck</title>
 	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:500|Julius+Sans+One|Raleway|Scada|Varela" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 	<script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -48,11 +49,12 @@
 	</nav>
 	<div class="padding"></div>
 	<div class="container">
-		<img id ="logo" src="src/huntnpeckfinal2.gif" alt="">
 
+		<img id ="logo" src="src/huntnpeckfinal2.gif" alt="">
 		<div id="chart-container">
 
 		</div>
+		<div id="chart_div" style="width: 200px; height: 150px;"></div>
 		<div class="row">
 			<div id='keyboard_gif'>
 
@@ -105,6 +107,7 @@
 			</div>
 		</div>
 		<div id="paragraph">
+
 			<div id="content">
 
 			</div>
@@ -121,6 +124,7 @@
 <script type="text/javascript" src="src/views/user.js"></script>
 <script type="text/javascript" src="src/controllers/paragraphs_controller.js"></script>
 <script type="text/javascript" src="src/controllers/users_controller.js"></script>
+<script type="text/javascript" src="src/concerns/gauge.js"></script>
 <script type="text/javascript" src="src/concerns/key_tracking.js"></script>
 <script type="text/javascript" src="src/concerns/calculations.js"></script>
 <script type="text/javascript" src="src/concerns/matches.js"></script>

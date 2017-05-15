@@ -60,6 +60,35 @@ class ParagraphView {
     let countUp = 0
     let countDown = 60
 
+    //gauge chart definitions start here
+    let gData
+    let gOptions
+    let gChart
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      gData = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['WPM', 0]
+      ]);
+
+      gOptions = {
+        width: 500, height: 250,
+        redFrom: 100, redTo: 150,
+        yellowFrom:50, yellowTo: 100,
+        greenFrom: 0, greenTo: 50,
+        max: 150,
+        minorTicks: 5
+      };
+
+      gChart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+      //this is the initial chart render
+      gChart.draw(gData, gOptions);
+    }
+    $('#chart_div').fadeIn(800)
     const view = this
     const wpmData = []
     $('#counter').fadeIn(800)
@@ -73,6 +102,13 @@ class ParagraphView {
       const acc = Calculations.accuracy(matchesConcern)
       const wpm = Calculations.wordsPerMinute(countUp, matchesConcern)
       const resultsMsg = Calculations.wordsCorrect(matchesConcern)
+
+      //gauge redraws start here and run based on our setInterval function
+
+      gData.setValue(0, 1, wpm);
+      gChart.draw(gData, gOptions);
+
+      //guage end
       graph.series[0].addPoint([countUp,wpm])
       if(countDown === 0) {
         $('#input').remove()
