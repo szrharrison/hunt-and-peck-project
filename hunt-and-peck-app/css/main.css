@@ -171,7 +171,7 @@ input.input#input, #inputUsername {
 #chart_div {
   position: fixed;
   left: 20px;
-  bottom: 150px;
+  bottom: 64px;
   text-align: center;
   display: none;
 }

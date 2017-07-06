@@ -75,10 +75,10 @@ class ParagraphView {
       ]);
 
       gOptions = {
-        width: 500, height: 250,
+        width: 350, height: 200,
         redFrom: 100, redTo: 150,
-        yellowFrom:50, yellowTo: 100,
-        greenFrom: 0, greenTo: 50,
+        yellowFrom:60, yellowTo: 100,
+        greenFrom: 20, greenTo: 60,
         max: 150,
         minorTicks: 5
       };
