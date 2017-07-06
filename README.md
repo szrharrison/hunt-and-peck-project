@@ -3,4 +3,4 @@
 A unique way of getting instant feedback with real-time chart updates based on your typing speed, WPM.
 
 
-![hunt-and-peck-demo](/hunt_and_peck.gif)
+![hunt-and-peck-demo](/huntandpeck.gif)
